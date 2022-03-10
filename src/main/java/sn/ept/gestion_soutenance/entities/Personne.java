@@ -7,24 +7,16 @@ package sn.ept.gestion_soutenance.entities;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.OneToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 /**
  *
  * @author ssidibe
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Personne.findAll", query = "SELECT e FROM Personne e")
+})
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Personne implements Serializable {
 
